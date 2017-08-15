@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+virtualenv site
+source site/bin/activate
+pip install gunicorn 2>/dev/null
+pip install Jinja2 2>/dev/null
+gunicorn -c conf/gunicorn.py main:app
+deactivate
