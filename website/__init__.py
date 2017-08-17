@@ -1,11 +1,13 @@
-from flask import Flask
-#from werkzeug.contrib.fixers import ProxyFix
-
-#from site import views
+from flask import Flask, render_template
+from werkzeug.contrib.fixers import ProxyFix
 
 site = Flask(__name__)
+site.wsgi_app = ProxyFix(site.wsgi_app)
+
 @site.route('/')
 def hello():
-    return 'Hello Flask!'
+    return page('index')
 
-#app.wsgi_app = ProxyFix(app.wsgi_app)
+@site.route('/<page>')
+def page(page):
+    return render_template('pages/' + page + '.html')

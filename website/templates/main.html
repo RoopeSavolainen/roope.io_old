@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="us">
+	<head>
+		<title>{{ title }}</title>
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+	<body>
+		<header>
+			<h1>roope.io</h1>
+			<nav>
+				<ul>
+					{% for link in navlinks %}
+						<li>
+							<a href="{{ url_for(link.target) }}">{{ link.name }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			{% block content %} {% endblock %}
+		</main>
+	</body>
+</html>
