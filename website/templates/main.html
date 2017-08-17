@@ -12,7 +12,7 @@
 				<ul>
 					{% for link in navlinks %}
 						<li>
-							<a href="{{ url_for(link.target) }}">{{ link.name }}</a>
+							<a href="{{ url_for('page', page=link.target) }}">{{ link.name }}</a>
 						</li>
 					{% endfor %}
 				</ul>
