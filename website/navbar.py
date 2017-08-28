@@ -1,7 +1,4 @@
-class Link:
-    def __init__(self, name, target):
-        self.name = name
-        self.target = target
+from website.link import Link
 
 links = [
             Link('Home', 'index'),

@@ -1,5 +1,16 @@
 {% extends "main.html" %}
 {% set title = 'Projects' %}
 {% block content %}
-<section>Here's stuff about projects I've done.</section>
+<section>
+	Here's stuff about projects I've done.
+
+	<ul>
+		{% for project in projectlinks %}
+		<li>
+			<a href="{{ url_for('project.render', project=project.target) }}">{{ project.name }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+</section>
+
 {% endblock %}
