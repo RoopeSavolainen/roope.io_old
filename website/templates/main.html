@@ -1,3 +1,9 @@
+{%- macro navbar(navlinks) -%}
+{%- for link in navlinks %}
+- [{{ link.name }}]({{ url_for('page.render', page=link.target) }})
+{%- endfor %}
+{%- endmacro %}
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,13 +14,9 @@
 	<body>
 		<header>
 			<nav>
-				<ul>
-					{% for link in navlinks %}
-						<li>
-							<a href="{{ url_for('page.render', page=link.target) }}">{{ link.name }}</a>
-						</li>
-					{% endfor %}
-				</ul>
+				{% filter markdown %}
+				{{ navbar(navlinks) }}
+				{% endfilter %}
 			</nav>
 		</header>
 
