@@ -1,10 +1,11 @@
 {% extends "main.html" %}
 {% set title = 'Home' %}
 {% block content %}
-<section>
-	<h2>Welcome!</h2>
-	<p>
-	The site is under construction, but you can take a look around.
-	</p>
-</section>
+
+{% filter markdown %}
+## Welcome!
+
+The site is under construction, but you can take a look around.
+{% endfilter %}
+
 {% endblock %}

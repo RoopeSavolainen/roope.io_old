@@ -1,16 +1,15 @@
 {% extends "main.html" %}
 {% set title = 'Projects' %}
 {% block content %}
-<section>
-	Here's stuff about projects I've done.
 
-	<ul>
-		{% for project in projectlinks %}
-		<li>
-			<a href="{{ url_for('project.render', project=project.target) }}">{{ project.name }}</a>
-		</li>
-		{% endfor %}
-	</ul>
-</section>
+{% filter markdown %}
+
+Here's stuff about projects I've done.
+
+{% for project in projectlinks %}
+- [{{ project.name }}]({{ url_for('project.render', project=project.target) }})
+{% endfor %}
+
+{% endfilter %}
 
 {% endblock %}
