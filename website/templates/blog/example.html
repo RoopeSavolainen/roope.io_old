@@ -1,5 +1,27 @@
 {% extends 'main.html' %}
 {% set title = Example %}
+
+{% block scripts %}
+{% include 'scripts/syntax.html' %}
+{% endblock %}
+
 {% block content %}
+
+{% filter markdown %}
+
+## Example project
+
 This is an example project for testing purposes.
+
+Here is some example code which should be syntax highlighted:
+
+	int main(void) {
+		int long_line = (255 >> (0x08 | 0x01)) & 0x00;
+		return long_line;
+	}
+
+Good to see that it works as intended.
+
+{% endfilter %}
+
 {% endblock %}
