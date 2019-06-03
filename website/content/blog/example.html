@@ -3,6 +3,7 @@
 
 {% block scripts %}
 {% include 'scripts/syntax.html' %}
+{% include 'scripts/math.html' %}
 {% endblock %}
 
 {% block content %}
@@ -21,6 +22,13 @@ Here is some example code which should be syntax highlighted:
 	}
 
 Good to see that it works as intended.
+
+Math equations can also be rendered nicely as you can see below:
+
+$$
+y = a_1 x + a_2 x^2 \\\
+a_1, a_2 \in \mathbb{R}
+$$
 
 {% endfilter %}
 
