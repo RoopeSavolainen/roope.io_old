@@ -8,7 +8,7 @@ from website.blog import blog, blogs
 
 from markdown import markdown
 
-site = Flask(__name__)
+site = Flask(__name__, template_folder='content')
 site.wsgi_app = ProxyFix(site.wsgi_app)
 
 @site.context_processor

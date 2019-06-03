@@ -7,7 +7,7 @@ blogs = [
     Link('Example', 'example'),
 ]
 
-blog = Blueprint('blog', __name__, template_folder='templates/blog')
+blog = Blueprint('blog', __name__, template_folder='content/blog')
 
 @blog.route('/<blog>')
 def render(blog):
