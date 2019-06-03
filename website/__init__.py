@@ -1,10 +1,10 @@
 from flask import Flask
 from werkzeug.contrib.fixers import ProxyFix
 
-from website.navbar import links
+from website.content import pages, blogs
 
 from website.page import page
-from website.blog import blog, blogs
+from website.blog import blog
 
 from markdown import markdown
 
@@ -13,7 +13,7 @@ site.wsgi_app = ProxyFix(site.wsgi_app)
 
 @site.context_processor
 def inject_navlinks():
-    return dict(navlinks=links)
+    return dict(navlinks=pages)
 
 @page.context_processor
 def inject_blogs():
