@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% set title = 'Blog' %}
+{% block content %}
+
+{% filter markdown %}
+
+This is my blog. I mainly write about my projects, but you can also find my thoughts on random stuff here.
+
+{% for blog in bloglinks %}
+- [{{ blog.name }}]({{ url_for('blog.render', blog=blog.target) }})
+{% endfor %}
+
+{% endfilter %}
+
+{% endblock %}

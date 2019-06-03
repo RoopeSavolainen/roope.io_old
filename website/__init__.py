@@ -4,7 +4,7 @@ from werkzeug.contrib.fixers import ProxyFix
 from website.navbar import links
 
 from website.page import page
-from website.project import project, projects
+from website.blog import blog, blogs
 
 from markdown import markdown
 
@@ -16,12 +16,12 @@ def inject_navlinks():
     return dict(navlinks=links)
 
 @page.context_processor
-def inject_projects():
-    return dict(projectlinks=projects)
+def inject_blogs():
+    return dict(bloglinks=blogs)
 
 @site.template_filter('markdown')
 def markdown_filter(text):
     return markdown(text)
 
 site.register_blueprint(page)
-site.register_blueprint(project, url_prefix='/project')
+site.register_blueprint(blog, url_prefix='/blog')

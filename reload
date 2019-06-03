@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -f gunicorn.pid ]
+then
+	kill -SIGHUP $(cat gunicorn.pid)
+else
+	echo "No running instance detected!"
+fi
