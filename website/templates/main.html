@@ -4,6 +4,16 @@
 {%- endfor %}
 {%- endmacro %}
 
+{% macro noscript() %}
+<noscript>
+	<p class="note">
+		You're apparently blocking javascipt. That's okay, the site should work fine without any JS, but the site uses <a href="https://highlightjs.org/">highlight.js</a> for code highlighting, so you'll be missing out on that.
+	</p>
+	<hr>
+</noscript>
+{% endmacro %}
+
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -25,6 +35,7 @@
 		<hr>
 
 		<main>
+			{{ noscript() }}
 			{% block content %} {% endblock %}
 		</main>
 	</body>
