@@ -1,25 +1,35 @@
+html
+{
+	background-color: #f8f1e7;
+}
+
 body
 {
+	background-color: #fdfaf7;
+
+	width: 80%;
+	max-width: 1280px;
+
+	border-radius: 12px;
+
+	margin: auto;
+	margin-top: 36px;
+
+	padding: 36px;
+
 	font-family: sans-serif;
-	background-color: #ddd;
+	font-size: 16px;
+
+	box-shadow: 0px 0px 48px 6px grey;
 }
 
 header, main
 {
-	margin: auto;
 }
 
 header
 {
-	width: 100%;
 	text-align: center;
-}
-
-header h1
-{
-	font-weight: bold;
-	font-size: 24;
-	color: black;
 }
 
 header nav ul
@@ -29,6 +39,7 @@ header nav ul
 
 header nav ul li
 {
+	font-size: 1.5em;
 	list-style-type: none;
 	display: inline;
 
@@ -48,11 +59,22 @@ header nav ul li a
 
 header nav ul li a:hover
 {
-	color: #666;
+	color: #d3a96a;
 }
 
 main
 {
-	width: 90%;
-	max-width: 1280px;
+	padding-top: 24px;
+}
+
+main h2
+{
+	font-size: 1.25em;
+}
+
+
+@media (max-width: 640px) {
+	body {
+		padding: 5%;
+	}
 }
