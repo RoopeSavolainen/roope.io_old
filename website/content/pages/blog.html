@@ -4,11 +4,13 @@
 
 {% filter markdown %}
 
-This is my blog. I mainly write about my projects, but you can also find my thoughts on random stuff here.
+## Blog
+
+Here's an archive of all my blog posts to date.
 
 {% for blog in bloglinks %}
-- [{{ blog.name }}]({{ url_for('blog.render', blog=blog.target) }})
-{% endfor %}
+- {{ blog.date.strftime('%x') }} - [{{ blog.name }}]({{ url_for('blog.render', blog=blog.target) }})
+{%- endfor %}
 
 {% endfilter %}
 
