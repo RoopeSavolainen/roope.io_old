@@ -21,7 +21,7 @@ def inject_blogs():
 
 @site.template_filter('markdown')
 def markdown_filter(text):
-    return markdown(text)
+    return markdown(text, extensions=['extra'])
 
 site.register_blueprint(page)
 site.register_blueprint(blog, url_prefix='/blog')
