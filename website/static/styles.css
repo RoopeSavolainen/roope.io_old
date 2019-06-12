@@ -92,6 +92,30 @@ img.right
 	float: right;
 }
 
+table
+{
+	background-color: white;
+	border: 1px solid lightgray;
+}
+
+table, td, th
+{
+	padding: 8px;
+	border-collapse: collapse;
+	border-right: 1px solid lightgray;
+}
+
+table thead tr
+{
+	background-color: #f8f1e7;
+	border-bottom: 1px solid lightgray;
+}
+
+table tbody tr:nth-child(2n)
+{
+	background-color: #fdfaf7;
+}
+
 @media (max-width: 640px)
 {
 	body
