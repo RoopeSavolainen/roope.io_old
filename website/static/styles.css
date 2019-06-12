@@ -10,7 +10,7 @@ body
 	width: 80%;
 	max-width: 1280px;
 
-	border-radius: 12px;
+	border-radius: 8px;
 
 	margin: auto;
 	margin-top: 36px;
@@ -79,6 +79,17 @@ main .note
 	color: #666;
 	margin: 0 0 12px 0;
 	padding: 0px;
+}
+
+img
+{
+	padding: 12px;
+	max-width: 80%;
+}
+
+img.right
+{
+	float: right;
 }
 
 @media (max-width: 640px)
