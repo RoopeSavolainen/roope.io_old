@@ -5,6 +5,7 @@ from website.content import pages, blogs
 
 from website.page import page
 from website.blog import blog
+from website.error import error_page
 
 from markdown import markdown
 
@@ -25,3 +26,4 @@ def markdown_filter(text):
 
 site.register_blueprint(page)
 site.register_blueprint(blog, url_prefix='/blog')
+site.register_error_handler(404, error_page)
